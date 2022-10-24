@@ -1,0 +1,21 @@
+env:
+  - SIMPLE
+  - SIMPLE_WITH_DEFAULT: default value
+
+interpolate:
+  API: https://example.com
+
+anchor_list:
+  - &anchor1 anchor1
+  - &anchor2 anchor2
+  - &restcountries https://restcountries.com/v3.1
+
+endpoints:
+  allCountries:
+    headers:
+      content-type: application/json
+    # body:
+    #   hello: world
+    url: *restcountries
+    path: /all
+    params:
